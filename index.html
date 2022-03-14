@@ -20,24 +20,24 @@
       <div class="col">
         <div class="header">
           <h1>Up & Down 게임</h1>
-          <button type="button" class="btn btn-secondary">Reset</button>
+          <button type="button" class="btn btn-secondary reset-button">Reset</button>
         </div>
         <div class="image">
           <img src="assets/image/character.gif" alt="">
         </div>
-        <p class="text-danger re-enter">올바른 숫자를 입력하세요</p>
+        <p class="text-danger message"></p>
         <div class="input-group mb-3 input">
           <input type="number" class="form-control" placeholder="1~50사이 숫자를 입력하세요" onfocus="this.placeholder=''"
             onblur="this.placeholder='1~50사이 숫자를 입력하세요'">
-          <button class="btn btn-secondary" type="button">Go!</button>
+          <button class="btn btn-secondary play-button" type="button">Go!</button>
         </div>
-        <p class="chance">남은 기회 : n회</p>
+        <p class="chance">입력기회 : 5회</p>
         <div class="overlay"></div>
       </div>
     </div>
   </div>
 
-  <!-- <script src="main.js"></script> -->
+  <script src="main.js"></script>
 </body>
 
 </html>
