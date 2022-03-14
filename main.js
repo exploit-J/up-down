@@ -13,6 +13,14 @@ userInput.addEventListener('focus', function(){
   userInput.value = ''
 })
 resetButton.addEventListener('click', reset)
+result.addEventListener('transitionend', sizeDown)
+document.querySelector('.form-control').addEventListener('keypress', function(e){
+  if(e.key === 'Enter'){
+    play()
+  }
+})
+
+
 
 function makeRandomNum(){
   randomNum = Math.floor(Math.random() * 50) + 1
@@ -23,6 +31,8 @@ makeRandomNum()
 function play(){
   let userNum = userInput.value 
 
+  sizeUp()
+  
   if(userNum > 50 || userNum < 1){
     result.textContent = '올바른 숫자를 입력하세요'
     return
@@ -60,4 +70,10 @@ function reset(){
   playButton.disabled = false
   chanceViewer.textContent = `남은기회 : ${chance}` 
   makeRandomNum()
+}
+function sizeUp(){
+  result.classList.add('is-active')
+}
+function sizeDown(){
+  result.classList.remove('is-active')
 }

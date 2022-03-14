@@ -34,6 +34,11 @@ input{
   font-size: 24px;
   font-weight: 700;
   text-align: center;
+  transition: all 400ms ease-in-out;
+}
+
+.message.is-active{
+  font-size: 36px;
 }
 
 .chance{
@@ -41,6 +46,8 @@ input{
   font-weight: 700;
   text-align: center;
 }
+
+
 
 .form-control:focus{
   border-color: #ced4da;
@@ -69,12 +76,4 @@ input::-webkit-inner-spin-button {
 .overlay.is-active{
     opacity: 1;
     visibility: visible;
-}
-
-
-@media screen and (min-width:768px) {
-  .image img{
-    width: 350px;
-    height: auto;
-  }
 }
