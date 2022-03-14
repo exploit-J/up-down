@@ -1,0 +1,38 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 5px;
+}
+
+.header h1{
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.image img{
+  width: 100%;
+}
+
+.re-enter{
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.chance{
+  margin-bottom: 10px;
+}
+
+.chance p{
+  font-weight: 700;
+  text-align: center;
+}
+
+.result{
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
