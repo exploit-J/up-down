@@ -5,8 +5,9 @@ let result = document.querySelector('.message')
 let chance = 5
 let chanceViewer = document.querySelector('.chance')
 let history = []
-// let gameover = false
 let resetButton = document.querySelector('.reset-button')
+let overlay = document.querySelector('.overlay')
+let endButton = document.querySelector('.end-button')
 
 playButton.addEventListener('click', play)
 userInput.addEventListener('focus', function(){
@@ -14,12 +15,14 @@ userInput.addEventListener('focus', function(){
 })
 resetButton.addEventListener('click', reset)
 result.addEventListener('transitionend', sizeDown)
-document.querySelector('.form-control').addEventListener('keypress', function(e){
+endButton.addEventListener('click', function(){
+  window.location.reload()
+})
+userInput.addEventListener('keypress', function(e){
   if(e.key === 'Enter'){
     play()
   }
 })
-
 
 
 function makeRandomNum(){
@@ -48,12 +51,18 @@ function play(){
     result.textContent = 'DOWN!'
   }else{
     result.textContent = '정답!'
+    overlay.classList.add('is-success')
+    endButton.classList.add('is-active')
+    end()
   }
 
   chance --
   chanceViewer.textContent = `남은기회 : ${chance}`
   if(chance == 0){
     chanceViewer.textContent = '기회를 모두 소진했습니다.'
+    overlay.classList.add('is-fail')
+    endButton.classList.add('is-active')
+    end()
   }
 
   history.push(userNum)
@@ -61,6 +70,8 @@ function play(){
   if(userNum == randomNum || chance < 1){
     playButton.disabled = true
   }
+
+  userInput.value = ''
 }
 
 function reset(){
@@ -68,12 +79,20 @@ function reset(){
   result.textContent = ''
   chance = 5
   playButton.disabled = false
-  chanceViewer.textContent = `남은기회 : ${chance}` 
+  chanceViewer.textContent = `남은기회 : ${chance}`
+  overlay.classList.remove('is-success', 'is-fail')
+  endButton.classList.remove('is-active')
   makeRandomNum()
 }
+
 function sizeUp(){
   result.classList.add('is-active')
 }
+
 function sizeDown(){
   result.classList.remove('is-active')
+}
+
+function end(){
+  userInput.addEventListener("keyup", e => { e.target.blur(); });
 }
