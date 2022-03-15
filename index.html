@@ -16,23 +16,26 @@
 
 <body>
   <div class="container">
-    <div class="row justify-content-center align-items-center">
+    <div class="row vh-100 justify-content-center align-items-center">
       <div class="col-md-5 col-lg-6">
-          <div class="header">
-            <h1>Up & Down 게임</h1>
-            <button type="button" class="btn btn-secondary reset-button">Reset</button>
-          </div>
-          <div class="image">
-            <img src="assets/image/character.gif" alt="">
-          </div>
-          <p class="text-danger message"></p>
-          <div class="input-group mb-3 input">
-            <input type="number" class="form-control" placeholder="1~50사이 숫자를 입력하세요" onfocus="this.placeholder=''"
-              onblur="this.placeholder='1~50사이 숫자를 입력하세요'">
-            <button class="btn btn-secondary play-button" type="button">Go!</button>
-          </div>
-          <p class="chance">입력기회 : 5회</p>
-          <div class="overlay"></div>
+        <div class="header">
+          <h1>Up & Down 게임</h1>
+          <button type="button" class="btn btn-secondary reset-button">Reset</button>
+        </div>
+        <div class="image">
+          <img src="assets/image/character.gif" alt="">
+        </div>
+        <p class="text-danger message"></p>
+        <div class="input-group mb-3 input">
+          <input type="number" class="form-control" placeholder="1~50사이 숫자를 입력하세요" onfocus="this.placeholder=''"
+            onblur="this.placeholder='1~50사이 숫자를 입력하세요'">
+          <button class="btn btn-secondary play-button" type="button">Go!</button>
+        </div>
+        <p class="chance">입력기회 : 5회</p>
+        <div class="overlay">
+          <button type="button" class="btn btn-secondary end-button">다시하기</button>
+        </div>
+        
       </div>
     </div>
   </div>
