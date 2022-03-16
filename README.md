@@ -15,6 +15,6 @@ https://exploit-j.github.io/up-down/
 * 반응형UI로 제작됨.
 
 ## 사용기술
-*HTML
-*CSS
-*JAVASCRIPT
+* HTML
+* CSS
+* JAVASCRIPT
