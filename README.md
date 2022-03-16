@@ -1,7 +1,6 @@
 # Up-Down게임
 
 [게임 플레이](https://exploit-j.github.io/up-down/)
-<a href="https://exploit-j.github.io/up-down/" target="_blank">게임 플레이</a>
 
 ## 기능
 * 게임이 시작되면 랜덤 숫자가 생성된다.
