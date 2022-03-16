@@ -14,7 +14,7 @@ userInput.addEventListener('focus', function(){
   userInput.value = ''
 })
 resetButton.addEventListener('click', reset)
-result.addEventListener('transitionend', sizeDown)
+result.addEventListener('transitionend', fontSizeDown)
 endButton.addEventListener('click', function(){
   window.location.reload()
 })
@@ -34,7 +34,7 @@ makeRandomNum()
 function play(){
   let userNum = userInput.value 
 
-  sizeUp()
+  fontSizeUp()
   
   if(userNum > 50 || userNum < 1){
     result.textContent = '올바른 숫자를 입력하세요'
@@ -47,18 +47,19 @@ function play(){
 
   if(userNum < randomNum){
     result.textContent = 'UP!'
-  }else if(userNum > randomNum){
+  }
+  if(userNum > randomNum){
     result.textContent = 'DOWN!'
-  }else{
+  }
+  if(userNum == randomNum){
     result.textContent = '정답!'
     overlay.classList.add('is-success')
     endButton.classList.add('is-active')
-    end()
-  }
+    end()}
 
   chance --
   chanceViewer.textContent = `남은기회 : ${chance}`
-  if(chance == 0){
+  if(chance == 0 && userNum != randomNum){
     chanceViewer.textContent = '기회를 모두 소진했습니다.'
     overlay.classList.add('is-fail')
     endButton.classList.add('is-active')
@@ -85,11 +86,11 @@ function reset(){
   makeRandomNum()
 }
 
-function sizeUp(){
+function fontSizeUp(){
   result.classList.add('is-active')
 }
-
-function sizeDown(){
+//토글로 할수 있을까
+function fontSizeDown(){
   result.classList.remove('is-active')
 }
 
