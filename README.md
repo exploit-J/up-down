@@ -1,6 +1,6 @@
 # Up-Down게임
 
-https://exploit-j.github.io/up-down/
+[게임 ](https://exploit-j.github.io/up-down/)
 
 ## 기능
 * 게임이 시작되면 랜덤 숫자가 생성된다.
