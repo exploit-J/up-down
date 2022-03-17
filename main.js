@@ -88,10 +88,10 @@ function reset(){
   makeRandomNum()
 }
 
+// 게임 알림메시지 transition 효과
 function fontSizeUp(){
   result.classList.add('is-active')
 }
-
 function fontSizeDown(){
   result.classList.remove('is-active')
 }
