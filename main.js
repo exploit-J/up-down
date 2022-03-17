@@ -24,16 +24,17 @@ userInput.addEventListener('keypress', function(e){
   }
 })
 
-
+// Random Number 생성함수
 function makeRandomNum(){
   randomNum = Math.floor(Math.random() * 50) + 1
-  console.log(randomNum);
 }
 makeRandomNum()
 
+// 'go', 게임실행
 function play(){
   let userNum = userInput.value 
 
+  // 유저가 숫자 입력 시 effect 추가 transition → transitioned연결
   fontSizeUp()
   
   if(userNum > 50 || userNum < 1){
@@ -75,6 +76,7 @@ function play(){
   userInput.value = ''
 }
 
+//게임 리셋버튼
 function reset(){
   userInput.value = ''
   result.textContent = ''
@@ -89,11 +91,12 @@ function reset(){
 function fontSizeUp(){
   result.classList.add('is-active')
 }
-//토글로 할수 있을까
+
 function fontSizeDown(){
   result.classList.remove('is-active')
 }
 
+// 게임 종료 시 effect : input창 focusout
 function end(){
   userInput.addEventListener("keyup", e => { e.target.blur(); });
 }
